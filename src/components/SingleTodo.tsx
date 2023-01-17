@@ -70,7 +70,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 						setEdit(!edit);
 					}
 				}}>
-					<AiFillEdit />
+					<AiFillEdit />
 				</span>
 				<span className="icon" onClick={() => handleDelete(todo.id)}>
 					<AiFillDelete />
