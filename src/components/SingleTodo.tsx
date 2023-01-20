@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Todo } from '../model';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
-import './styles.css';
-import { tokenToString } from 'typescript';
-import TodoList from './TodoList';
 import { Draggable } from 'react-beautiful-dnd';
 
 type Props = {
@@ -80,7 +77,7 @@ const SingleTodo = ({ index, todo, todos, setTodos }: Props) => {
 								setEdit(!edit);
 							}
 						}}>
-							<AiFillEdit />
+							<AiFillEdit />
 						</span>
 						<span className="icon" onClick={() => handleDelete(todo.id)}>
 							<AiFillDelete />
@@ -95,4 +92,4 @@ const SingleTodo = ({ index, todo, todos, setTodos }: Props) => {
 	)
 }
 
-export default SingleTodo
+export default SingleTodo;

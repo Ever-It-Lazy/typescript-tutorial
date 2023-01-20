@@ -16,11 +16,11 @@ const InputField = ({ todo, setTodo, handleAdd }: Props) => {
 			inputRef.current?.blur();
 		}}>
 			<input
-				type="input"
+				type="text"
 				ref={inputRef}
 				value={todo}
 				onChange={(e) => setTodo(e.target.value)}
-				placeholder='Enter a task'
+				placeholder='Enter a Task'
 				className="input__box"
 			/>
 			<button className='input_submit' type="submit">Go</button>
@@ -28,4 +28,4 @@ const InputField = ({ todo, setTodo, handleAdd }: Props) => {
 	)
 }
 
-export default InputField
+export default InputField;

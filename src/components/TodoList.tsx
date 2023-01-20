@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import { Todo } from "../model";
 import SingleTodo from './SingleTodo';
 import { Droppable } from 'react-beautiful-dnd';
@@ -30,7 +29,7 @@ const TodoList: React.FC<Props> = ({
 							<span className="todos__heading">
 								Active Tasks
 							</span>
-							{todos.map((todo, index) => (
+							{todos?.map((todo, index) => (
 								<SingleTodo
 									index={index}
 									todo={todo}
@@ -55,7 +54,7 @@ const TodoList: React.FC<Props> = ({
 							<span className="todos__heading">
 								Completed Tasks
 							</span>
-							{completedTodos.map((todo, index) => (
+							{completedTodos?.map((todo, index) => (
 								<SingleTodo
 									index={index}
 									todo={todo}
@@ -73,4 +72,4 @@ const TodoList: React.FC<Props> = ({
 	)
 }
 
-export default TodoList
+export default TodoList;

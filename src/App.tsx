@@ -14,12 +14,12 @@ const App: React.FC = () => {
 		e.preventDefault();
 
 		if (todos) {
-			setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }])
+			setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
 			setTodo("");
 		}
 	};
 
-	const onDragEnd = (result:DropResult) => {
+	const onDragEnd = (result: DropResult) => {
 		const { source, destination } = result;
 
 		if (!destination) return;
@@ -54,7 +54,7 @@ const App: React.FC = () => {
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
 			<div className="App">
-				<span className='heading'>Taskify</span>
+				<span className="heading">Taskify</span>
 
 				<InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 				<TodoList
