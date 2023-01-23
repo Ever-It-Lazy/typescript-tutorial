@@ -2,18 +2,20 @@ import React from 'react';
 import './styles.css';
 import { Todo } from "../model";
 import SingleTodo from './SingleTodo';
+import { TodoReducer } from '../reducer';
 
 interface Props {
-	todos: Todo[];
-	setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+	state: Todo[];
 }
 
-const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
+const TodoList: React.FC<Props> = ({ state }) => {
+	//console.log(TodoReducer.getState())
+
 	return (
 		<div className='todos'>
-			{todos.map(todo => (
+			{state.map(todo => (
 				<SingleTodo todo={todo} key={todo.id}
-					todos={todos} setTodos={setTodos} />
+					 />
 			))}
 		</div>
 	)

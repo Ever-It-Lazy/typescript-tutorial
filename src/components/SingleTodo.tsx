@@ -10,20 +10,19 @@ import { TodoReducer } from '../reducer';
 type Props = {
 	todo: Todo;
 	key: number;
-	todos: Todo[];
-	setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+	//state: Todo[];
 }
 
-const SingleTodo = ({ todo, todos, setTodos }: Props) => {
+const SingleTodo = ({ todo }: Props) => {
 	const [edit, setEdit] = useState<boolean>(false);
 	const [editTodo, setEditTodo] = useState<string>(todo.todo);
 
-	const [state, dispatch] = useReducer(TodoReducer, todos);
+	const [state, dispatch] = useReducer(TodoReducer, []);
 
 	const handleDone = (id: number) => {
 		dispatch({ type: 'done', payload: id });
 		console.log(state)
-		setTodos(state);
+		//setTodos(state);
 		// setTodos(todos.map((todo) =>
 		// 	todo.id === id
 		// 		? { ...todo, isDone: !todo.isDone }
@@ -34,15 +33,15 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 
 	const handleDelete = (id: number) => {
 		dispatch({ type: 'remove', payload: id });
-		setTodos(state);
+		//setTodos(state);
 	};
 
 	const handleEdit = (e: React.FormEvent, id: number) => {
 		e.preventDefault();
 
-		setTodos(todos.map((todo) => (
-			todo.id === id ? { ...todo, todo: editTodo } : todo
-		)));
+		// setTodos(todos.map((todo) => (
+		// 	todo.id === id ? { ...todo, todo: editTodo } : todo
+		// )));
 		setEdit(false);
 	};
 
