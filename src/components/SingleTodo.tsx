@@ -3,6 +3,7 @@ import { Todo } from '../model';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
 import { Draggable } from 'react-beautiful-dnd';
+import parse from 'html-react-parser';
 
 type Props = {
 	index: number;
@@ -64,9 +65,9 @@ const SingleTodo = ({ index, todo, todos, setTodos }: Props) => {
 							/>
 						) : (
 							todo.isDone ? (
-								<s className="todos__single--text">{todo.todo}</s>
+								<s className="todos__single--text">{parse(todo.todo)}</s>
 							) : (
-								<span className="todos__single--text">{todo.todo}</span>
+								<span className="todos__single--text">{parse(todo.todo)}</span>
 							)
 						)
 					}
