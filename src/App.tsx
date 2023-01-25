@@ -13,7 +13,7 @@ const App: React.FC = () => {
 	const handleAdd = (e: React.FormEvent) => {
 		e.preventDefault();
 
-		if (todos) {
+		if (todo) {
 			setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
 			setTodo("");
 		}
