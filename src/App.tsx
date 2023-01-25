@@ -7,7 +7,15 @@ import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 
 const App: React.FC = () => {
 	const [todo, setTodo] = useState<string>("");
-	const [todos, setTodos] = useState<Todo[]>([]);
+	const [todos, setTodos] = useState<Todo[]>([
+		{ id: 1, todo: 'This application demonstrates my baseline ability to work with Typescript.', isDone: false },
+		{ id: 2, todo: `It's derived from <a href="https://www.youtube.com/watch?v=knqz3_rPcKk&t=250s">this tutorial here</a>.`, isDone: false },
+		{ id: 3, todo: `(In <a href="https://www.youtube.com/watch?v=uEVHJf30bWI">a subsequent tutorial</a> it introduces the drag & drop UI package <a href="https://www.npmjs.com/package/react-beautiful-dnd">react-beautiful-dnd</a>.`, isDone: false },
+		{ id: 4, todo: 'As a functional application, the UI makes no kinds of sense. There are two ways to "complete" tasks: dragging them or checking them. Entering multiple tasks is a pain, as the <input> loses focus every time you submit something. You are not prevented from saving a blank item.', isDone: false },
+		{ id: 5, todo: 'This is a test', isDone: false },
+		{ id: 6, todo: 'This is a test', isDone: false },
+		{ id: 7, todo: 'This is a test', isDone: false },
+	]);
 	const [completedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
 	const handleAdd = (e: React.FormEvent) => {
